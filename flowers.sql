@@ -17,10 +17,10 @@ CREATE TABLE Zones(
 CREATE TABLE Deliveries(
     id TINYINT(1) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     categ VARCHAR(5) NOT NULL,
-    delSize DECIMAL(5,3)
+    delSize DECIMAL(5,3) NULL
 ) AUTO_INCREMENT = 1;
 
-CREATE TABLE FLowersInfo(
+CREATE TABLE FlowersInfo(
     id TINYINT(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     comName VARCHAR(30) NOT NULL,
     latName VARCHAR(35) NOT NULL,
@@ -31,5 +31,31 @@ CREATE TABLE FLowersInfo(
 ) AUTO_INCREMENT = 101;
 
 -- Populate tables
+-- zones
+LOAD DATA INFILE
+'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/zones.csv'
+INTO TABLE zones
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(lowerTemp,higerTemp);
+
+-- deliveries
+LOAD DATA INFILE
+'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/deliveries.csv'
+INTO TABLE deliveries
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(categ,delSize)
+;
+
+LOAD DATA INFILE
+'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/flowersInfo.csv'
+INTO TABLE FlowersInfo
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(comName,latName,cZone,hZone,deliver,sunNeeds);
 
 -- Query db
