@@ -21,13 +21,13 @@ CREATE TABLE Deliveries(
 ) AUTO_INCREMENT = 1;
 
 CREATE TABLE FlowersInfo(
-    id TINYINT(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    comName VARCHAR(35) NOT NULL,
-    latName VARCHAR(40) NOT NULL,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    comName VARCHAR(30) NOT NULL,
+    latName VARCHAR(35) NOT NULL,
     cZone TINYINT(2) NOT NULL,
     hZone TINYINT(2) NOT NULL,
     deliver TINYINT(2) NOT NULL,
-    sunNeeds VARCHAR(6)
+    sunNeeds VARCHAR(5)
 ) AUTO_INCREMENT = 101;
 
 -- Populate tables
