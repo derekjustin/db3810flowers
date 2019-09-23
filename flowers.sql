@@ -17,7 +17,7 @@ CREATE TABLE Zones(
 CREATE TABLE Deliveries(
     id TINYINT(1) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     categ VARCHAR(5) NOT NULL,
-    delSize DECIMAL(5,3) NULL
+    delSize DECIMAL(5,3) NULL DEFAULT NULL
 ) AUTO_INCREMENT = 1;
 
 CREATE TABLE FlowersInfo(
@@ -57,5 +57,7 @@ FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (comName,latName,cZone,hZone,deliver,sunNeeds);
+
+SHOW WARNINGS;
 
 -- Query db
