@@ -34,32 +34,21 @@ CREATE TABLE FlowersInfo(
 -- Populate tables
 
 -- zones
---------------------------------------------------------
---Justins path
+-- Uncomment your path and comment mine
 LOAD DATA INFILE
---INTO TABLE zones
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(lowerTemp,higerTemp);
-
---Dereks Path
-LOAD DATA INFILE
-'/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/zones.csv'
+'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/zones.csv'
+-- '/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/zones.csv'
 INTO TABLE zones
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (lowerTemp,higerTemp);
---------------------------------------------------------
-
-
 
 -- deliveries
---------------------------------------------------------
---Justins path
+-- Uncomment your path and comment mine
 LOAD DATA INFILE
 '/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/deliveries.csv'
+-- '/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/deliveries.csv'
 INTO TABLE deliveries
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -67,42 +56,15 @@ IGNORE 1 ROWS
 (categ,delSize)
 ;
 
---Dereks path
-LOAD DATA INFILE
-'/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/deliveries.csv'
-INTO TABLE deliveries
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(categ,delSize)
-;
---------------------------------------------------------
-
-
---flowersInfo
---------------------------------------------------------
---Justins path
+-- flowersInfo
+-- Uncomment your path and comment mine
 LOAD DATA INFILE
 '/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/flowersInfo.csv'
+-- '/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/flowersInfo.csv'
 INTO TABLE FlowersInfo
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (comName,latName,cZone,hZone,deliver,sunNeeds);
-
---Dereks path
-LOAD DATA INFILE
-'/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/flowersInfo.csv'
-INTO TABLE FlowersInfo
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(comName,latName,cZone,hZone,deliver,sunNeeds);
---------------------------------------------------------
-
-
-
-
-
 
 -- TODO: Query db
