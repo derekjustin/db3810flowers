@@ -17,7 +17,7 @@ CREATE TABLE Zones(
 CREATE TABLE Deliveries(
     id TINYINT(1) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     categ VARCHAR(5) NOT NULL,
-    delSize DECIMAL(5,3) NULL DEFAULT NULL
+    delSize DECIMAL(5,3) NULL
 ) AUTO_INCREMENT = 1;
 
 CREATE TABLE FlowersInfo(
@@ -34,37 +34,37 @@ CREATE TABLE FlowersInfo(
 -- Populate tables
 
 -- zones
--- Uncomment your path and comment mine
-LOAD DATA INFILE
-'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/zones.csv'
--- '/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/zones.csv'
-INTO TABLE zones
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(lowerTemp,higerTemp);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (-50,-40);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (-40,-30);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (-30,-20);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (-20,-10);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (-10,0);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (0,10);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (10,20);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (20,30);
+INSERT INTO zones(lowerTemp,higerTemp) VALUES (30,40);
 
 -- deliveries
--- Uncomment your path and comment mine
-LOAD DATA INFILE
-'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/deliveries.csv'
--- '/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/deliveries.csv'
-INTO TABLE deliveries
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(categ,delSize)
-;
+INSERT INTO Deliveries(categ,delSize) VALUES ('pot',1.500);
+INSERT INTO Deliveries(categ,delSize) VALUES ('pot',2.250);
+INSERT INTO Deliveries(categ,delSize) VALUES ('pot',2.625);
+INSERT INTO Deliveries(categ,delSize) VALUES ('pot',4.250);
+INSERT INTO Deliveries(categ,delSize) VALUES ('plant',0);
+INSERT INTO Deliveries(categ,delSize) VALUES ('bulb',0);
+INSERT INTO Deliveries(categ,delSize) VALUES ('hedge',18.000);
+INSERT INTO Deliveries(categ,delSize) VALUES ('shrub',24.000);
+INSERT INTO Deliveries(categ,delSize) VALUES ('tree',36.000);
 
 -- flowersInfo
--- Uncomment your path and comment mine
-LOAD DATA INFILE
-'/Users/jstre/Desktop/fall19/cs_3810_DBsystems/projects/project1/db3810flowers/flowersInfo.csv'
--- '/Users/mrderek/Desktop/Principles_of_Database_Systems_CS3810/Projects/Project_1/db3810flowers/flowersInfo.csv'
-INTO TABLE FlowersInfo
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-(comName,latName,cZone,hZone,deliver,sunNeeds);
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Lady Fern','Atbyrium filix-femina',2,9,5,'SH');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Pink Caladiums','C.x bortulanum',10,10,6,'PtoSH');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Lily-of-the-Valley','Convallaria majalis',2,8,6,'PtoSH');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Purple Liatris','Liatris spicata',3,9,6,'StoP');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Black Eyed Susan','Rudbeckia fulgida var. specios',4,10,2,'StoP');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Nikko Blue Hydrangea','Hydrangea macrophylla',5,9,4,'StoSH');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Variegated Weigela','W. florida Variegata',4,9,8,'StoP');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Lombardy Poplar','Populus nigra Italica',3,9,9,'S');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Purple Leaf Plum Hedge','Prunus x cistena',2,8,7,'S');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Thorndale Ivy','Hedera belix Thorndale',3,9,1,'StoSH');
 
 -- TODO: Query db
