@@ -77,6 +77,7 @@ INSERT INTO FlowersInfo(id,comName,latName,cZone,hZone,deliver,sunNeeds) VALUES 
 SELECT COUNT(*) AS 'Total Zones' FROM zones;
 
 -- b) the number of flowers per cool zone.
+SELECT cZone AS 'Cool Zone' , COUNT(*) AS 'Number of Flowers' FROM flowersInfo GROUP BY cZone;
 
 -- c) common names of the plants that have delivery sizes less than 5.
 
