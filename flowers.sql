@@ -1,5 +1,8 @@
--- Create database
+-- Names: DEREK HOLSAPPLE, JUSTIN STRELKA
+-- Project: Flowers Database
+-- Course: cs_3810 DB Systems
 
+-- Create database
 CREATE DATABASE flowers;
 
 -- Select Database
