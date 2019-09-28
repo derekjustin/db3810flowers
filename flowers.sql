@@ -78,7 +78,6 @@ SELECT COUNT(*) AS 'Total Zones' FROM zones;
 
 -- b) the number of flowers per cool zone.
 
-
 -- c) common names of the plants that have delivery sizes less than 5.
 -- d) common names of the plants that require full sun (i.e., sun needs contains ‘S’).
 -- e) all delivery category names order alphabetically (without repetition).
