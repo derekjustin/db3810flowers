@@ -27,7 +27,12 @@ CREATE TABLE FlowersInfo(
     cZone TINYINT(2) NOT NULL,
     hZone TINYINT(2) NOT NULL,
     deliver TINYINT(2) NOT NULL,
-    sunNeeds VARCHAR(5)
+    sunNeeds VARCHAR(5),
+
+    FOREIGN KEY (cZone) REFERENCES Zones (id),
+    FOREIGN KEY (hZone) REFERENCES Zones (id),
+    FOREIGN KEY (deliver) REFERENCES Deliveries (id)
+
 ) AUTO_INCREMENT = 101;
 
 
