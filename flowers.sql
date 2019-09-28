@@ -11,7 +11,7 @@ USE flowers;
 CREATE TABLE Zones(
     id TINYINT(2) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     lowerTemp TINYINT(2) NOT NULL,
-    higerTemp TINYINT(2) NOT NULL 
+    higherTemp TINYINT(2) NOT NULL 
 ) AUTO_INCREMENT = 2;
 
 CREATE TABLE Deliveries(
@@ -39,15 +39,15 @@ CREATE TABLE FlowersInfo(
 -- Populate tables
 
 -- zones
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-50,-40);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-40,-30);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-30,-20);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-20,-10);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-10,0);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (0,10);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (10,20);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (20,30);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (30,40);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-50,-40);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-40,-30);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-30,-20);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-20,-10);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-10,0);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (0,10);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (10,20);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (20,30);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (30,40);
 
 -- deliveries
 INSERT INTO Deliveries(categ,delSize) VALUES ('pot',1.500);
@@ -83,7 +83,7 @@ SELECT cZone AS 'Cool Zone' , COUNT(*) AS 'Number of Flowers' FROM flowersInfo G
 SELECT comName AS 'Common Name: delSize < 5' FROM FlowersInfo A INNER JOIN Deliveries B ON A.deliver = B.id WHERE B.delSize < 5;
 
 -- d) common names of the plants that require full sun (i.e., sun needs contains ‘S’).
- SELECT comName AS 'Common Name: requires full Sun' FROM flowersInfo WHERE sunNeeds LIKE 'Sto%' OR sunNeeds LIKE 'S';
+SELECT comName AS 'Common Name: requires full Sun' FROM flowersInfo WHERE sunNeeds LIKE 'Sto%' OR sunNeeds LIKE 'S';
 
 -- e) all delivery category names order alphabetically (without repetition).
 SELECT categ AS 'Delivery Category Names' FROM Deliveries GROUP BY categ ORDER BY categ;
