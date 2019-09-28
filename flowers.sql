@@ -68,3 +68,9 @@ INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('P
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Thorndale Ivy','Hedera belix Thorndale',3,9,1,'StoSH');
 
 -- TODO: Query db
+--a) the total number of zones.
+--b) the number of flowers per cool zone.
+--c) common names of the plants that have delivery sizes less than 5.
+--d) common names of the plants that require full sun (i.e., sun needs contains ‘S’).
+--e) all delivery category names order alphabetically (without repetition).
+--f) the exact output (note that it is order by Name):
