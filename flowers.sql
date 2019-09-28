@@ -93,10 +93,19 @@ SELECT A.comName AS 'Name',B.lowerTemp AS 'Cool Zone (low)',B.higherTemp AS 'Coo
 
 -- g) plant names that have the same hot zone as “Pink Caladiums” (your solution MUST get
 -- the hot zone of “Pink Caladiums” in a variable).
+SET @PChzone := (SELECT hZone FROM FlowersInfo WHERE comName = 'Pink Caladiums');
+SELECT comName AS 'Common Name',latName AS 'Latin Name' FROM flowersInfo A WHERE A.hZone = @PChzone AND A.comName != 'Pink Caladiums';
 
 -- h) the total number of plants, the minimum delivery size, the maximum delivery size, and
 -- the average size based on the plants that have delivery sizes (note that the average value
 -- should be rounded using two decimals).
+SET @Totalplants := (SELECT COUNT(deliver) FROM flowersInfo A WHERE deliver != 5 AND deliver != 6);
+SET @MINdelSize := (SELECT ROUND(MIN(delSize),1) FROM Deliveries);
+SET @MAXdelSize := (SELECT ROUND(MAX(delSize),0) FROM Deliveries);
+SET @AVGdelSize := (SELECT ROUND(SUM(delSize) / @TotalPlants,2) FROM Deliveries);
+SELECT @Totalplants AS 'Total',@MINdelSize AS 'Min',@MAXdelSize AS 'Max',@AVGdelSize AS 'Average'; 
+
+
 
 -- i) the Latin name of the plant that has the word ‘Eyed’ in its name (you must use LIKE in
 -- this query to get full credit).
