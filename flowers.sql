@@ -1,5 +1,8 @@
--- Create database
+-- Names: DEREK HOLSAPPLE, JUSTIN STRELKA
+-- Project: Flowers Database
+-- Course: cs_3810 DB Systems
 
+-- Create database
 CREATE DATABASE flowers;
 
 -- Select Database
@@ -110,3 +113,4 @@ SELECT @Totalplants AS 'Total',@MINdelSize AS 'Min',@MAXdelSize AS 'Max',@AVGdel
 SELECT latName AS 'Latin Name' FROM flowersInfo WHERE comName LIKE '%Eyed%';
 
 -- j) the exact output (ordered by Category and then by Name):
+SELECT A.categ AS 'Category',B.comName AS 'Name' FROM Deliveries A INNER JOIN flowersInfo B ON A.id = B.deliver ORDER BY A.categ,B.comName;
