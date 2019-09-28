@@ -49,8 +49,8 @@ INSERT INTO Deliveries(categ,delSize) VALUES ('pot',1.500);
 INSERT INTO Deliveries(categ,delSize) VALUES ('pot',2.250);
 INSERT INTO Deliveries(categ,delSize) VALUES ('pot',2.625);
 INSERT INTO Deliveries(categ,delSize) VALUES ('pot',4.250);
-INSERT INTO Deliveries(categ,delSize) VALUES ('plant',0);
-INSERT INTO Deliveries(categ,delSize) VALUES ('bulb',0);
+INSERT INTO Deliveries(categ,delSize) VALUES ('plant',NULL);
+INSERT INTO Deliveries(categ,delSize) VALUES ('bulb',NULL);
 INSERT INTO Deliveries(categ,delSize) VALUES ('hedge',18.000);
 INSERT INTO Deliveries(categ,delSize) VALUES ('shrub',24.000);
 INSERT INTO Deliveries(categ,delSize) VALUES ('tree',36.000);
@@ -68,9 +68,9 @@ INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('P
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Thorndale Ivy','Hedera belix Thorndale',3,9,1,'StoSH');
 
 -- TODO: Query db
---a) the total number of zones.
---b) the number of flowers per cool zone.
---c) common names of the plants that have delivery sizes less than 5.
---d) common names of the plants that require full sun (i.e., sun needs contains ‘S’).
---e) all delivery category names order alphabetically (without repetition).
---f) the exact output (note that it is order by Name):
+-- a) the total number of zones.
+-- b) the number of flowers per cool zone.
+-- c) common names of the plants that have delivery sizes less than 5.
+-- d) common names of the plants that require full sun (i.e., sun needs contains ‘S’).
+-- e) all delivery category names order alphabetically (without repetition).
+-- f) the exact output (note that it is order by Name):
