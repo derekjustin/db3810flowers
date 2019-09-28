@@ -63,7 +63,7 @@ INSERT INTO Deliveries(categ,delSize) VALUES ('tree',36.000);
 -- flowersInfo
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Lady Fern','Atbyrium filix-femina',2,9,5,'SH');
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Pink Caladiums','C.x bortulanum',10,10,6,'PtoSH');
-INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Lily-of-the-Valley','Convallaria majalis',2,8,6,'PtoSH');
+INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Lily-of-the-Valley','Convallaria majalis',2,8,5,'PtoSH');
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Purple Liatris','Liatris spicata',3,9,6,'StoP');
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Black Eyed Susan','Rudbeckia fulgida var. specios',4,10,2,'StoP');
 INSERT INTO FlowersInfo(comName,latName,cZone,hZone,deliver,sunNeeds) VALUES ('Nikko Blue Hydrangea','Hydrangea macrophylla',5,9,4,'StoSH');
