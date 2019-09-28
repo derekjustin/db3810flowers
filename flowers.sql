@@ -11,7 +11,7 @@ USE flowers;
 CREATE TABLE Zones(
     id TINYINT(2) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     lowerTemp TINYINT(2) NOT NULL,
-    higerTemp TINYINT(2) NOT NULL 
+    higherTemp TINYINT(2) NOT NULL 
 ) AUTO_INCREMENT = 2;
 
 CREATE TABLE Deliveries(
@@ -39,15 +39,15 @@ CREATE TABLE FlowersInfo(
 -- Populate tables
 
 -- zones
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-50,-40);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-40,-30);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-30,-20);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-20,-10);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (-10,0);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (0,10);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (10,20);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (20,30);
-INSERT INTO zones(lowerTemp,higerTemp) VALUES (30,40);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-50,-40);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-40,-30);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-30,-20);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-20,-10);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (-10,0);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (0,10);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (10,20);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (20,30);
+INSERT INTO zones(lowerTemp,higherTemp) VALUES (30,40);
 
 -- deliveries
 INSERT INTO Deliveries(categ,delSize) VALUES ('pot',1.500);
@@ -89,4 +89,4 @@ SELECT comName AS 'Common Name: requires full Sun' FROM flowersInfo WHERE sunNee
 SELECT categ AS 'Delivery Category Names' FROM Deliveries GROUP BY categ ORDER BY categ;
 
 -- f) the exact output (note that it is order by Name):
-SELECT A.comName AS 'Name',B.lowerTemp AS 'Cool Zone (low)',B.higerTemp AS 'Cool Zone (high)',C.categ AS 'Delivery Category' FROM FlowersInfo A INNER JOIN Zones B ON A.cZone = B.id,Deliveries C WHERE C.id = A.deliver ORDER BY A.comName;
+SELECT A.comName AS 'Name',B.lowerTemp AS 'Cool Zone (low)',B.higherTemp AS 'Cool Zone (high)',C.categ AS 'Delivery Category' FROM FlowersInfo A INNER JOIN Zones B ON A.cZone = B.id,Deliveries C WHERE C.id = A.deliver ORDER BY A.comName;
