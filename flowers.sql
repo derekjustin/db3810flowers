@@ -123,15 +123,15 @@ SELECT comName AS 'Common Name',latName
         -- should be rounded using two decimals).
 SET @Totalplants := (SELECT COUNT(deliver) FROM flowersInfo A 
                         WHERE deliver != 5 AND deliver != 6);
-SET @MINdelSize := (SELECT ROUND(MIN(delSize),1) FROM Deliveries);
-SET @MAXdelSize := (SELECT ROUND(MAX(delSize),0) FROM Deliveries);
-SET @AVGdelSize := (SELECT ROUND(AVG(B.delSize),2) 
+SET @MINdelSize  := (SELECT ROUND(MIN(delSize),1) FROM Deliveries);
+SET @MAXdelSize  := (SELECT ROUND(MAX(delSize),0) FROM Deliveries);
+SET @AVGdelSize  := (SELECT ROUND(AVG(B.delSize),2) 
                         FROM FlowersInfo A INNER JOIN Deliveries B 
                         ON A.deliver = B.id WHERE deliver != 5 AND deliver != 6);
 SELECT @Totalplants AS 'Total',
-       @MINdelSize AS 'Min',
-       @MAXdelSize AS 'Max',
-       @AVGdelSize AS 'Average'; 
+       @MINdelSize  AS 'Min',
+       @MAXdelSize  AS 'Max',
+       @AVGdelSize  AS 'Average'; 
 
 
 -- i) the Latin name of the plant that has the word ‘Eyed’ in its name (you must use LIKE in
