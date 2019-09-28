@@ -86,4 +86,6 @@ SELECT comName AS 'Common Name: delSize < 5' FROM FlowersInfo A INNER JOIN Deliv
  SELECT comName AS 'Common Name: requires full Sun' FROM flowersInfo WHERE sunNeeds LIKE 'Sto%' OR sunNeeds LIKE 'S';
 
 -- e) all delivery category names order alphabetically (without repetition).
+SELECT categ AS 'Delivery Category Names' FROM Deliveries GROUP BY categ ORDER BY categ;
+
 -- f) the exact output (note that it is order by Name):
