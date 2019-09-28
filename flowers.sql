@@ -82,7 +82,6 @@ SELECT cZone AS 'Cool Zone' , COUNT(*) AS 'Number of Flowers' FROM flowersInfo G
 -- c) common names of the plants that have delivery sizes less than 5.
 SELECT comName AS 'Common Name: delSize < 5' FROM FlowersInfo A INNER JOIN Deliveries B ON A.deliver = B.id WHERE B.delSize < 5;
 
-
 -- d) common names of the plants that require full sun (i.e., sun needs contains ‘S’).
 -- e) all delivery category names order alphabetically (without repetition).
 -- f) the exact output (note that it is order by Name):
