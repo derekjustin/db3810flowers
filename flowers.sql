@@ -1,6 +1,7 @@
 -- Names: DEREK HOLSAPPLE, JUSTIN STRELKA
 -- Project: Flowers Database
 -- Course: cs_3810 DB Systems
+-- Date: 10/01/2019
 
 -- Create database
 CREATE DATABASE flowers;
